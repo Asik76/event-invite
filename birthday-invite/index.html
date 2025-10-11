@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="kk">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="ЖАС.ico" sizes="64x64">
   <title>жас мерейтой</title>
-
   <style>
     /* ===== 1. БАННЕР С АНИМАЦИЕЙ ===== */
     .banner {
       position: relative;
       width: 100%;
-      height: 70vh;
+      max-height: 200vh;
       background: url("14.png") center/cover no-repeat;
       display: flex;
       justify-content: center;
@@ -66,46 +64,55 @@
       }
     }
 
-    /* ===== 2. ПОРТРЕТ ПАПЫ ===== */
-    .dad-photo {
-      margin: -90px auto;
-      max-width: 500px;
-      width: 95%;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+  /* ===== ФОТО ПАПЫ И ПЛЕЕР ===== */
+.father-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
-    .dad-photo img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+ .photo-block {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
 
-    a img {
-      border: none;
-    }
+/* Фото папы */
+.dad-photo {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
-    /* ===== 3. БЛОК С ВРАЩАЮЩЕЙСЯ РАМОЙ И ПЛЕЕРОМ ===== */
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      text-align: center;
-    }
+.dad-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
 
-    .wrapper {
+/* Блок плеера */
+ .wrapper {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      top: -140px auto 0;
       /* теперь относительно .photo-block */
-      bottom: -20px;
+      bottom:0;
       /* на сколько приподнять от низа */
-      left: 19%;
+      left: 50%;
       transform: translateX(-50%);
       width: 180px;
       /* общий диаметр всей конструкции */
       height: 180px;
-      margin: -260px auto 0;
+      border-radius: 12%;
     }
 
-    /* --- 1. внешняя картинка photo11 --- */
+/* --- 1. внешняя картинка photo11 --- */
     .layer-photo {
       position: absolute;
       inset: 0;
@@ -171,13 +178,6 @@
       to {
         transform: rotate(360deg);
       }
-    }
-
-    .photo-block {
-      position: relative;
-      /* теперь дети можно располагать абсолютно */
-      text-align: center;
-      margin: 40px 0;
     }
 
     /* ===== БЛОК С ДАТОЙ ===== */
@@ -276,6 +276,7 @@
 
      /* Фото медведя*/
     .bear {
+      position: relative;
       display: flex;
       justify-content: center;
       /* горизонтальный центр */
@@ -298,15 +299,16 @@
       display: block;
       position: relative;
       top: 180px;
-      left: 60px;
+      left: 10%;
       animation: moveX 4s ease-in-out infinite alternate,
       pulse 3s ease-in-out infinite;
+      margin: 3% auto 0;
     }
 
     /* ===== ПРИГЛАШЕНИЕ ===== */
     .invite {
       max-width: 600px;
-      margin: -500px auto 20px;
+      margin: 50px auto 20px;
       font-size: 1.3em;
       line-height: 1.5;
       text-align: center;
@@ -335,7 +337,7 @@
       width: 85%;
       max-width: 850px;
       display: block;
-      margin: 20px auto -380px;
+      margin: -420px auto -380px;
       /* сверху 20px, снизу 10px */
     }
 
@@ -674,9 +676,7 @@
       font-weight: bold;
       color: #000;
     }
-  </style>
-
-  <style>
+  
     /* ===== RSVP оформление ===== */
     .rsvp {
       max-width: 420px;
@@ -834,7 +834,62 @@
       /* лёгкое разрежение букв */
       margin: 50px auto 0px;
     }
-  </style>
+    
+  /* === ГЛАВНЫЕ ИСПРАВЛЕНИЯ === */
+
+/* 1. Общие настройки — убираем горизонтальную прокрутку */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. Все элементы не должны выходить за пределы экрана */
+*, *::before, *::after {
+  box-sizing: inherit;
+  max-width: 100%;
+}
+
+/* 5. Поддержка адаптивности (чтобы не ломалось на ПК и телефонах) */
+@media (min-width: 200px) {
+
+   body {
+      margin: auto;
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+    }
+
+  .banner {
+    aspect-ratio: 1 / 1;
+    background-position: center;
+  }
+
+  .dad-photo {
+     margin: -90px auto;
+      max-width: 500px;
+      width: 95%;
+      border-radius: 12px;
+      overflow: hidden;
+  }
+
+  .invite {
+    font-size: 1.1em;
+    margin: -300px auto 10px;
+  }
+
+  .calendar {
+    width: 90%;
+  }
+ }
+
+@media (max-width: 500px) {
+   .father-section {
+  margin: 10% auto 0;
+ }
+}
+ </style>
 </head>
 
 <body>
@@ -842,15 +897,17 @@
   <section class="banner">
   </section>
 
+<section class="father-section">
   <div class="photo-block">
     <!-- 2. Папин портрет -->
     <div class="dad-photo">
       <img src="15.png" alt="Папин портрет">
+    </div>
 
       <!-- 3. Ваш блок с рамой и плеером (код не менялся) -->
       <div class="wrapper">
         <div class="layer-photo" id="layerPhoto">
-          <img src="11.png" alt="Frame Switch" id="frameImg">
+        <img src="11.png" alt="Frame Switch" id="frameImg">
         </div>
 
         <div class="gold-ring"></div>
@@ -863,6 +920,8 @@
 
     <audio id="audio" src="kuanysh--karlygash---toi-koriniz_(mp3xit.net).mp3"></audio>
   </div>
+</div>
+</section>
 
   <!-- ===== БЛОК С ДАТОЙ ===== -->
   <section class="date-block">
