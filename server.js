@@ -38,7 +38,7 @@ app.post("/rsvp-bot", async (req, res) => {
     guests.forEach(g => {
       if (g.option === "Әрине, келемін") totalComing += 1;
       else if (g.option === "Жұбайыммен келемін") totalComing += 2;
-      else if (g.option === "Өкінішке орай келе алмаймын") totalNotComing += 1;
+      else if (g.option === "Өкінішке орай, келе алмаймын") totalNotComing += 1;
     });
 
     // Текст для Telegram
