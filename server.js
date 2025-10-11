@@ -36,7 +36,7 @@ app.post("/rsvp-bot", async (req, res) => {
     let totalComing = 0;
     let totalNotComing = 0;
     guests.forEach(g => {
-      if (g.option === "Келемін") totalComing += 1;
+      if (g.option === "Әрине, келемін") totalComing += 1;
       else if (g.option === "Жұбайыммен келемін") totalComing += 2;
       else if (g.option === "Өкінішке орай келе алмаймын") totalNotComing += 1;
     });
@@ -47,7 +47,7 @@ app.post("/rsvp-bot", async (req, res) => {
       text += `💑 ${spouseName} ${spouseSurname}\n`;
     }
 
-    text += option === "Өкінішке орай келе алмаймын"
+    text += option === "Өкінішке орай, келе алмаймын"
       ? `🙁 ${option}\n\n`
       : `✅ Таңдауы: ${option}\n\n`;
 
