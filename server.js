@@ -75,9 +75,9 @@ app.get("/stats", (req, res) => {
   let totalComing = 0, totalNotComing = 0, countYes = 0, countWithSpouse = 0;
 
   guests.forEach(g => {
-    if (g.option === "Келемін") { totalComing += 1; countYes++; }
+    if (g.option === "Әрине, келемін") { totalComing += 1; countYes++; }
     else if (g.option === "Жұбайыммен келемін") { totalComing += 2; countWithSpouse++; }
-    else if (g.option === "Өкінішке орай келе алмаймын") { totalNotComing++; }
+    else if (g.option === "Өкінішке орай, келе алмаймын") { totalNotComing++; }
   });
 
   res.send(`

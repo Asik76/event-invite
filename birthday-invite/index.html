@@ -181,70 +181,138 @@
     }
 
     /* ===== БЛОК С ДАТОЙ ===== */
-    .date-block {
-      text-align: center;
-      margin: 250px auto 0;
-      color: #000000;
-      font-family: "Playfair Display", serif;
-    }
+.date-block {
+  width: 100%;
+  max-width: 700px; /* ограничиваем максимум, чтобы не был огромным */
+  margin: 120px auto 0; /* центрируем и приподнимаем */
+  text-align: center;
+  color: #000;
+  font-family: "Playfair Display", serif;
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+  padding: 0 15px; /* добавляем отступы, чтобы текст не прилипал к краям */
+}
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
+/* Контейнер с левой, центральной и правой частью */
+.main-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap; /* чтобы на маленьких экранах колонки переносились */
+  transition: all 0.5s ease;
+}
 
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
 
-    .main-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 70px;
-      margin-bottom: 25px;
-    }
+.line {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c8a951, transparent);
+}
 
-    .left,
-    .right {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-    }
+.date-text {
+  font-size: 1.8em;
+}
 
-    .line {
-      width: 80px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #c8a951, transparent);
-    }
+.center {
+  font-size: 8em;
+  color: #000;
+  font-weight: bold;
+  text-shadow: 0 0 100px rgba(200, 169, 81, 0.4);
+}
 
-    .date-text {
-      font-size: 1.8em;
-      color: #000000;
-    }
+.month {
+  font-size: 3em;
+  color: #c8a951;
+  margin-bottom: 25px;
+}
 
-    .center {
-      font-size: 8em;
-      color: #000;
-      font-weight: bold;
-      text-shadow: 0 0 100px rgba(200, 169, 81, 0.4);
-    }
+.year {
+  font-size: 3em;
+  color: #c8a951;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
 
-    .month {
-      font-size: 3em;
-      color: #c8a951;
-      margin-bottom: 25px;
-    }
+/* ===== АДАПТИВНОСТЬ ===== */
 
-    .year {
-      font-size: 3em;
-      color: #c8a951;
-      margin-top: 20px;
-      letter-spacing: 2px;
-    }
+/* Планшеты */
+@media (max-width: 1024px) {
+  .date-block {
+    max-width: 600px;
+    margin-top: 100px;
+  }
+  .center {
+    font-size: 6em;
+  }
+}
+
+/* Мобильные */
+@media (max-width: 768px) {
+  .date-block {
+    max-width: 90%;
+    margin-top: 80px;
+  }
+  .main-row {
+    gap: 20px;
+  }
+  .center {
+    font-size: 4.5em;
+  }
+  .month, .year {
+    font-size: 2em;
+  }
+}
+
+/* Узкие экраны */
+@media (max-width: 480px) {
+  .date-block {
+    margin-top: 60px;
+    padding: 0 10px;
+  }
+  .center {
+    font-size: 3.5em;
+  }
+  .month, .year {
+    font-size: 1.6em;
+  }
+}
+
+/* ===== СУПЕР-УЗКИЕ (до 290px) ===== */
+@media (max-width: 290px) {
+  .date-block {
+    margin-top: 60px;
+    padding: 0 5px;
+  }
+
+  .main-row {
+    flex-direction: column; /* всё под друг другом */
+    gap: 10px;
+  }
+
+  .center {
+    font-size: 2.8em;
+  }
+
+  .month, .year {
+    font-size: 1.4em;
+  }
+
+  .line {
+    width: 50px;
+  }
+
+  .date-text {
+    font-size: 1.2em;
+  }
+}
 
     /* движение влево-вправо */
     @keyframes moveX {
