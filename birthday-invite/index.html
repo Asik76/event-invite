@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="kk">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="ЖАС.ico" sizes="64x64">
   <title>жас мерейтой</title>
@@ -64,37 +66,37 @@
       }
     }
 
-  /* ===== ФОТО ПАПЫ И ПЛЕЕР ===== */
-.father-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
+    /* ===== ФОТО ПАПЫ И ПЛЕЕР ===== */
+    .father-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
 
- .photo-block {
-  position: relative;
-  width: 100%;
-  margin: 0;
-}
+    .photo-block {
+      position: relative;
+      width: 100%;
+      margin: 0;
+    }
 
-/* Фото папы */
-.dad-photo {
-  position: relative;
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-}
+    /* Фото папы */
+    .dad-photo {
+      position: relative;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+    }
 
-.dad-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
+    .dad-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
 
-/* Блок плеера */
- .wrapper {
+    /* Блок плеера */
+    .wrapper {
       position: relative;
       display: flex;
       justify-content: center;
@@ -102,7 +104,7 @@
       margin: 0;
       top: -140px auto 0;
       /* теперь относительно .photo-block */
-      bottom:0;
+      bottom: 0;
       /* на сколько приподнять от низа */
       left: 50%;
       transform: translateX(-50%);
@@ -112,7 +114,7 @@
       border-radius: 12%;
     }
 
-/* --- 1. внешняя картинка photo11 --- */
+    /* --- 1. внешняя картинка photo11 --- */
     .layer-photo {
       position: absolute;
       inset: 0;
@@ -181,138 +183,172 @@
     }
 
     /* ===== БЛОК С ДАТОЙ ===== */
-.date-block {
-  width: 100%;
-  max-width: 700px; /* ограничиваем максимум, чтобы не был огромным */
-  margin: 120px auto 0; /* центрируем и приподнимаем */
-  text-align: center;
-  color: #000;
-  font-family: "Playfair Display", serif;
-  transition: all 0.5s ease-in-out;
-  box-sizing: border-box;
-  padding: 0 15px; /* добавляем отступы, чтобы текст не прилипал к краям */
-}
+    .date-block {
+      font-family: "Playfair Display", serif;
+      width: 100%;
+      max-width: 700px;
+      /* ограничиваем максимум, чтобы не был огромным */
+      margin: 120px auto 0;
+      /* центрируем и приподнимаем */
+      text-align: center;
+      color: #000;
+      font-family: "Playfair Display", serif;
+      transition: all 0.5s ease-in-out;
+      box-sizing: border-box;
+      padding: 0 15px;
+      /* добавляем отступы, чтобы текст не прилипал к краям */
+    }
 
-/* Контейнер с левой, центральной и правой частью */
-.main-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  flex-wrap: wrap; /* чтобы на маленьких экранах колонки переносились */
-  transition: all 0.5s ease;
-}
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
 
-.left,
-.right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.line {
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #c8a951, transparent);
-}
+    /* Контейнер с левой, центральной и правой частью */
+    .main-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      /* чтобы на маленьких экранах колонки переносились */
+      transition: all 0.5s ease;
+    }
 
-.date-text {
-  font-size: 1.8em;
-}
+    .left,
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
 
-.center {
-  font-size: 8em;
-  color: #000;
-  font-weight: bold;
-  text-shadow: 0 0 100px rgba(200, 169, 81, 0.4);
-}
+    .line {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #c8a951, transparent);
+    }
 
-.month {
-  font-size: 3em;
-  color: #c8a951;
-  margin-bottom: 25px;
-}
+    .date-text {
+      font-size: 1.5em;
+    }
 
-.year {
-  font-size: 3em;
-  color: #c8a951;
-  margin-top: 20px;
-  letter-spacing: 2px;
-}
+    .center {
+      font-size: 8em;
+      color: #000;
+      font-weight: bold;
+      text-shadow: 0 0 100px rgba(200, 169, 81, 0.4);
+    }
 
-/* ===== АДАПТИВНОСТЬ ===== */
+    .month {
+      font-size: 3em;
+      color: #c8a951;
+      margin-bottom: 25px;
+    }
 
-/* Планшеты */
-@media (max-width: 1024px) {
-  .date-block {
-    max-width: 600px;
-    margin-top: 100px;
-  }
-  .center {
-    font-size: 6em;
-  }
-}
+    .year {
+      font-size: 3em;
+      color: #c8a951;
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
 
-/* Мобильные */
-@media (max-width: 768px) {
-  .date-block {
-    max-width: 90%;
-    margin-top: 80px;
-  }
-  .main-row {
-    gap: 20px;
-  }
-  .center {
-    font-size: 4.5em;
-  }
-  .month, .year {
-    font-size: 2em;
-  }
-}
+    /* ===== АДАПТИВНОСТЬ ===== */
 
-/* Узкие экраны */
-@media (max-width: 480px) {
-  .date-block {
-    margin-top: 60px;
-    padding: 0 10px;
-  }
-  .center {
-    font-size: 3.5em;
-  }
-  .month, .year {
-    font-size: 1.6em;
-  }
-}
+    /* Планшеты */
+    @media (max-width: 1024px) {
+      .date-block {
+        max-width: 600px;
+        margin-top: 100px auto 0;
+      }
 
-/* ===== СУПЕР-УЗКИЕ (до 290px) ===== */
-@media (max-width: 290px) {
-  .date-block {
-    margin-top: 60px;
-    padding: 0 5px;
-  }
+      .center {
+        font-size: 6em;
+      }
+    }
 
-  .main-row {
-    flex-direction: column; /* всё под друг другом */
-    gap: 10px;
-  }
+    /* Мобильные */
+    @media (max-width: 768px) {
+      .date-block {
+        max-width: 90%;
+        margin-top: 80px;
+      }
 
-  .center {
-    font-size: 2.8em;
-  }
+      .date-text {
+        font-size: 1.2em;
+      }
 
-  .month, .year {
-    font-size: 1.4em;
-  }
+      .main-row {
+        gap: 20px;
+      }
 
-  .line {
-    width: 50px;
-  }
+      .center {
+        font-size: 4.5em;
+      }
 
-  .date-text {
-    font-size: 1.2em;
-  }
-}
+      .month,
+      .year {
+        font-size: 2em;
+      }
+    }
+
+    /* Узкие экраны */
+    @media (max-width: 480px) {
+      .date-block {
+        margin-top: 60px auto 0;
+        padding: 0 10px;
+      }
+
+      .center {
+        font-size: 3.5em;
+      }
+
+      .month,
+      .year {
+        font-size: 1.6em;
+      }
+
+      .date-text {
+        font-size: 1.0em;
+      }
+    }
+
+    /* ===== СУПЕР-УЗКИЕ (до 290px) ===== */
+    @media (max-width: 290px) {
+      .date-block {
+        margin-top: 60px auto 0;
+        padding: 0 5px;
+      }
+
+      .main-row {
+        flex-direction: column;
+        /* всё под друг другом */
+        gap: 10px;
+      }
+
+      .center {
+        font-size: 2.8em;
+      }
+
+      .month,
+      .year {
+        font-size: 1.4em;
+      }
+
+      .line {
+        width: 50px;
+      }
+
+      .date-text {
+        font-size: 1.0em;
+      }
+    }
 
     /* движение влево-вправо */
     @keyframes moveX {
@@ -342,100 +378,255 @@
       }
     }
 
-     /* Фото медведя*/
+    /* ===== Фото медведя ===== */
     .bear {
       position: relative;
       display: flex;
       justify-content: center;
-      /* горизонтальный центр */
       align-items: center;
-      /* вертикальный центр */
       width: 100%;
-      /* растянуть контейнер */
       min-height: 40vh;
-      /* занимать ~60% высоты экрана */
-      padding: 20px;
+      padding: 0;
     }
 
     .bear img {
+      position: relative;
+      left: 8%;
+      transform: translateX(-10%);
       width: 100%;
       max-width: 220px;
-      /* максимальный размер (можешь менять) */
       min-width: 180px;
-      /* минимальный размер, чтобы на телефоне не был слишком мелкий */
       height: auto;
       display: block;
       position: relative;
-      top: 180px;
-      left: 10%;
-      animation: moveX 4s ease-in-out infinite alternate,
-      pulse 3s ease-in-out infinite;
-      margin: 3% auto 0;
+      top: 100px;
+      margin: 60px auto 0;
+      transition: all 0.6s ease;
+      /* плавное изменение при resize */
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    /* ===== Адаптив ===== */
+
+    /* Планшеты */
+    @media (max-width: 768px) {
+      .bear img {
+        top: 140px auto 0;
+        max-width: 180px;
+        left: 10%;
+      }
+    }
+
+    /* Смартфоны */
+    @media (max-width: 480px) {
+      .bear {
+        min-height: 30vh;
+      }
+
+      .bear img {
+        top: 60px auto 0;
+        max-width: 150px;
+        left: 15%;
+      }
+    }
+
+    /* Очень узкие экраны (до 290px) */
+    @media (max-width: 330px) {
+      .bear {
+        min-height: 25vh;
+        padding: 10px;
+      }
+
+      .bear img {
+        top: 60px auto 0;
+        max-width: 100px;
+        /* уменьшенный размер */
+        left: 25%;
+      }
     }
 
     /* ===== ПРИГЛАШЕНИЕ ===== */
     .invite {
       max-width: 600px;
-      margin: 50px auto 20px;
+      margin: -120px auto 30px;
       font-size: 1.3em;
-      line-height: 1.5;
+      line-height: 1.6;
       text-align: center;
+      position: relative;
+      z-index: 10;
     }
 
     .invite-title {
-      font-size: 1.8em;
+      font-size: 1.4em;
+      line-height: 1.2;
       font-weight: bold;
       color: #c8a951;
-      margin: -40px auto 0;
+      margin: 15px auto 5px;
+      /* меньше отступ сверху и снизу */
     }
 
     .invite-text {
-      margin: 10px auto;
+      margin: 5px auto;
     }
 
     .invite-bottom {
       font-size: 1.2em;
-      margin-top: 20px 0;
       font-weight: bold;
       color: #c8a951;
+      margin: 10px auto 0;
+      /* меньше отступ */
     }
 
     /* ===== ФОТО ===== */
-    .infinite-photo-top img {
-      width: 85%;
-      max-width: 850px;
-      display: block;
-      margin: -420px auto -380px;
-      /* сверху 20px, снизу 10px */
-    }
-
+    .infinite-photo-top img,
     .infinite-photo-bottom img {
       width: 85%;
       max-width: 850px;
       display: block;
-      margin: -380px auto 0;
-      /* сверху 10px, снизу 0px */
+      margin: -400px auto;
+      /* было 30px — стало меньше */
     }
 
+    /* ===== АДАПТИВ ===== */
+    @media (max-width: 1020px) {
+      .invite {
+        font-size: 1.1em;
+      }
 
-    /* Хозяева тойа */
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 90%;
+        margin: -420px auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .invite {
+        font-size: 1em;
+        margin: 30px auto 40px;
+      }
+
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 90%;
+        margin: -420px auto;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .invite {
+        font-size: 0.5em;
+      }
+
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 95%;
+        margin: -400px auto;
+      }
+    }
+
+    @media (min-width: 400px) and (max-width: 500px) {
+      .invite {
+        font-size: 0.5em;
+      }
+
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 95%;
+        margin: -360px auto;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .invite {
+        font-size: 1em;
+        margin: 30px auto 40px;
+      }
+
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 90%;
+        margin: -300px auto;
+      }
+    }
+
+    @media (min-width: 380px) and (max-width: 400px) {
+      .invite {
+        font-size: 0.5em;
+      }
+
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 95%;
+        margin: -280px auto;
+      }
+    }
+
+    @media (min-width: 350px) and (max-width: 380px) {
+      .invite {
+        font-size: 0.5em;
+      }
+
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 95%;
+        margin: -260px auto;
+      }
+    }
+
+    @media (min-width: 300px) and (max-width: 350px) {
+      .invite {
+        font-size: 0.5em;
+      }
+
+      .infinite-photo-top img,
+      .infinite-photo-bottom img {
+        width: 95%;
+        margin: -240px auto;
+      }
+    }
+
+    /* ===== ХОЗЯЕВА ТОЙА ===== */
     .toiy-owner {
       text-align: center;
-      margin: -400px auto 40px;
-      font-size: 1.5em;
+      margin: -350px auto 40px;
+      font-size: 2em;
       line-height: 1.6;
       color: #000000;
       font-family: "Playfair Display", serif;
-      font-size: 2em;
     }
 
     .toiy-owner p {
-      margin: 5px 0;
+      margin: 5px;
     }
 
     .toiy-owner b {
       color: #c8a951;
       /* золотистый акцент */
+    }
+
+    /* ===== АДАПТИВ ===== */
+    @media (max-width: 768px) {
+      .toiy-owner {
+        margin: -300px auto 30px;
+        font-size: 1.8em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .toiy-owner {
+        margin: -250px auto 25px;
+        font-size: 1.6em;
+        line-height: 1.4;
+      }
+    }
+
+    @media (max-width: 300px) and (max-width: 350px) {
+      .toiy-owner {
+        margin: -200px auto 20px;
+        font-size: 1.6em;
+        line-height: 1.4;
+      }
     }
 
     /*  ФИНАЛЬНЫЙ БЛОК */
@@ -498,7 +689,7 @@
     /* сверху вниз */
     @keyframes fallDown {
       0% {
-        top: -150px;
+        top: -50px;
         opacity: 0;
       }
 
@@ -627,7 +818,6 @@
       background: url("33.png") center/contain no-repeat;
       transform: translate(-50%, -50%);
       z-index: 2;
-
       animation: spin 12s linear infinite, pulse 4s ease-in-out infinite;
       pointer-events: none;
     }
@@ -656,13 +846,119 @@
       }
     }
 
+    /* ✅ Адаптив для всего финального блока */
+    @media (max-width: 1200px) {
+
+      .final-center .confetti-left,
+      .final-center .confetti-right {
+        width: 280px;
+      }
+
+      .calendar-highlight {
+        width: 120px;
+        height: 120px;
+        top: 47%;
+        left: 83%;
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .final-center .confetti-left,
+      .final-center .confetti-right {
+        width: 280px;
+      }
+
+      .calendar-highlight {
+        width: 120px;
+        height: 120px;
+        top: 47%;
+        left: 83%;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .final-center .confetti-left,
+      .final-center .confetti-right {
+        width: 280px;
+      }
+
+      .calendar-highlight {
+        width: 110px;
+        height: 110px;
+        top: 47%;
+        left: 83%;
+      }
+    }
+
+    @media (min-width: 480px) and (max-width: 500px) {
+
+      .final-center .confetti-left,
+      .final-center .confetti-right {
+        width: 250px;
+      }
+
+      .confetti-right {
+        bottom: -15px;
+        right: -20px;
+      }
+
+      .calendar-highlight {
+        width: 120px;
+        height: 120px;
+        top: 47%;
+        left: 83%;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .final-center .confetti-left,
+      .final-center .confetti-right {
+        width: 200px;
+      }
+
+      .confetti-right {
+        bottom: -10px;
+        right: -10px;
+      }
+
+      .calendar-highlight {
+        width: 80px;
+        height: 80px;
+        top: 47%;
+        left: 83%;
+      }
+    }
+
+    @media (max-width: 350px) {
+
+      .final-center .confetti-left,
+      .final-center .confetti-right {
+        width: 180px;
+      }
+
+      .confetti-right {
+        bottom: -10px;
+        right: -10px;
+      }
+
+      .calendar-highlight {
+        width: 80px;
+        height: 80px;
+        top: 47%;
+        left: 83%;
+      }
+    }
+
     /* ===== БЛОК С АДРЕСОМ ===== */
     .address-block {
       text-align: center;
       margin: -20px auto;
       font-family: "Playfair Display", serif;
       color: #000000;
-
+      padding: 0 10px;
     }
 
     .address-title {
@@ -686,17 +982,15 @@
     .address-photo img {
       margin: -60px auto 0;
       width: 200px;
-      /* размер */
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
       animation: breathe 4s ease-in-out infinite;
     }
 
-    /* Текст под фото без отступа */
+    /* Текст под фото */
     .gis-text {
       margin-top: -40px;
-      /* маленький зазор */
       font-weight: bold;
       color: #c8a951;
       font-size: 1.4em;
@@ -715,6 +1009,7 @@
       }
     }
 
+    /* ===== ТАЙМЕР ===== */
     .countdown-block {
       text-align: center;
       margin: 100px auto 0;
@@ -733,6 +1028,7 @@
       gap: 30px;
       font-size: 1.5em;
       color: #000;
+      flex-wrap: wrap;
     }
 
     #countdown div {
@@ -744,7 +1040,112 @@
       font-weight: bold;
       color: #000;
     }
-  
+
+    /* ===== АДАПТИВ ===== */
+    @media (max-width: 900px) {
+      .address-title {
+        font-size: 1.8em;
+      }
+
+      .address-block p {
+        font-size: 1.5em;
+      }
+
+      .address-photo img {
+        width: 170px;
+        height: 170px;
+        margin-top: -40px;
+      }
+
+      .gis-text {
+        font-size: 1.5em;
+        margin-top: -30px;
+      }
+
+      #countdown {
+        gap: 20px;
+        font-size: 1.5em;
+      }
+
+      #countdown span {
+        font-size: 1.5em;
+      }
+
+      .countdown-title {
+        font-size: 1.8em;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+      .address-title {
+        font-size: 1.6em;
+      }
+
+      .address-block p {
+        font-size: 1.5em;
+      }
+
+      .address-photo img {
+        width: 150px;
+        height: 150px;
+        margin-top: -30px;
+      }
+
+      .gis-text {
+        font-size: 1.5em;
+        margin-top: -25px;
+      }
+
+      #countdown {
+        gap: 15px;
+        font-size: 1.5em;
+      }
+
+      #countdown span {
+        font-size: 1.4em;
+      }
+
+      .countdown-title {
+        font-size: 1.6em;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .address-title {
+        font-size: 1.5em;
+      }
+
+      .address-block p {
+        font-size: 1.5em;
+        line-height: 1.4;
+      }
+
+      .address-photo img {
+        width: 130px;
+        height: 130px;
+        margin-top: -25px;
+      }
+
+      .gis-text {
+        font-size: 1.5em;
+        margin-top: -20px;
+      }
+
+      #countdown {
+        gap: 10px;
+        font-size: 1.5em;
+      }
+
+      #countdown span {
+        font-size: 1.2em;
+      }
+
+      .countdown-title {
+        font-size: 1.5em;
+      }
+    }
+
     /* ===== RSVP оформление ===== */
     .rsvp {
       max-width: 420px;
@@ -871,7 +1272,7 @@
     .footer-separator {
       text-align: center;
       padding: 25px 0;
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: bold;
       color: #c8a951;
       /* золотистый текст */
@@ -885,6 +1286,80 @@
       background: #fff;
       /* белый фон для контраста */
     }
+
+    /* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+  .rsvp {
+    max-width: 380px;
+    padding: 25px 20px;
+  }
+
+  .rsvp h2 {
+    font-size: 1.4em;
+  }
+
+   .footer-separator {
+    font-size: 1.5em;
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .rsvp {
+   font-size: 0.5em;
+  }
+
+  .rsvp h2 {
+    font-size: 2.5em;
+  }
+
+  .name-line input {
+    width: 90%;
+  }
+
+  .rsvp input[type="text"] {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .rsvp button {
+    font-size: 2.1em;
+    padding: 10px 18px;
+  }
+
+  .footer-separator {
+    font-size: 1.2em;
+    padding: 18px 0;
+  }
+
+  .option {
+    font-size: 2.1em;
+  }
+}
+
+@media (max-width: 400px) {
+  .rsvp {
+   font-size: 0.8em;
+  }
+
+  .rsvp h2 {
+    font-size: 1.2em;
+  }
+
+  .rsvp button {
+    font-size: 1.2em;
+    padding: 10px 15px;
+  }
+
+  .footer-separator {
+    font-size: 1.2em;
+    padding: 18px 0;
+  }
+
+  .option {
+    font-size: 1.1em;
+  }
+}
 
     /* Подвал */
     .site-footer {
@@ -902,62 +1377,113 @@
       /* лёгкое разрежение букв */
       margin: 50px auto 0px;
     }
-    
-  /* === ГЛАВНЫЕ ИСПРАВЛЕНИЯ === */
 
-/* 1. Общие настройки — убираем горизонтальную прокрутку */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100%;
-  box-sizing: border-box;
+    .site-footer p {
+  margin-bottom: 15px;
+  font-size: 1em;
+  line-height: 1.5;
 }
 
-/* 2. Все элементы не должны выходить за пределы экрана */
-*, *::before, *::after {
-  box-sizing: inherit;
-  max-width: 100%;
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 12px;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 1em;
 }
 
-/* 5. Поддержка адаптивности (чтобы не ломалось на ПК и телефонах) */
-@media (min-width: 200px) {
+.footer-whatsapp:hover {
+  background: #20b858;
+  transform: scale(1.05);
+}
 
-   body {
-      margin: auto;
-      font-family: "Segoe UI", sans-serif;
-      text-align: center;
+.footer-whatsapp img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 1em;
+    padding: 15px 10px;
+  }
+
+  .footer-whatsapp {
+    font-size: 0.95em;
+    padding: 8px 14px;
+  }
+
+  .footer-whatsapp img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+    /* === ГЛАВНЫЕ ИСПРАВЛЕНИЯ === */
+
+    /* 1. Общие настройки — убираем горизонтальную прокрутку */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-  .banner {
-    aspect-ratio: 1 / 1;
-    background-position: center;
-  }
+    /* 2. Все элементы не должны выходить за пределы экрана */
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+      max-width: 100%;
+    }
 
-  .dad-photo {
-     margin: -90px auto;
-      max-width: 500px;
-      width: 95%;
-      border-radius: 12px;
-      overflow: hidden;
-  }
+    /* 5. Поддержка адаптивности (чтобы не ломалось на ПК и телефонах) */
+    @media (min-width: 200px) {
 
-  .invite {
-    font-size: 1.1em;
-    margin: -300px auto 10px;
-  }
+      body {
+        margin: auto;
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+      }
 
-  .calendar {
-    width: 90%;
-  }
- }
+      .banner {
+        aspect-ratio: 1 / 1;
+        background-position: center;
+      }
 
-@media (max-width: 500px) {
-   .father-section {
-  margin: 10% auto 0;
- }
-}
- </style>
+      .dad-photo {
+        margin: -90px auto;
+        max-width: 500px;
+        width: 95%;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .invite {
+        font-size: 1.1em;
+        margin: -300px auto 10px;
+      }
+
+      .calendar {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .father-section {
+        margin: 10% auto 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -965,17 +1491,17 @@ html, body {
   <section class="banner">
   </section>
 
-<section class="father-section">
-  <div class="photo-block">
-    <!-- 2. Папин портрет -->
-    <div class="dad-photo">
-      <img src="15.png" alt="Папин портрет">
-    </div>
+  <section class="father-section">
+    <div class="photo-block fade-in">
+      <!-- 2. Папин портрет -->
+      <div class="dad-photo">
+        <img src="15.png" alt="Папин портрет">
+      </div>
 
       <!-- 3. Ваш блок с рамой и плеером (код не менялся) -->
       <div class="wrapper">
         <div class="layer-photo" id="layerPhoto">
-        <img src="11.png" alt="Frame Switch" id="frameImg">
+          <img src="11.png" alt="Frame Switch" id="frameImg">
         </div>
 
         <div class="gold-ring"></div>
@@ -987,9 +1513,9 @@ html, body {
     </div>
 
     <audio id="audio" src="kuanysh--karlygash---toi-koriniz_(mp3xit.net).mp3"></audio>
-  </div>
-</div>
-</section>
+    </div>
+    </div>
+  </section>
 
   <!-- ===== БЛОК С ДАТОЙ ===== -->
   <section class="date-block">
@@ -1024,12 +1550,12 @@ html, body {
   <!-- ==== ТЕКСТ ПРИГЛАШЕНИЯ ==== -->
   <div class="invite">
     <!-- Верхнее фото -->
-    <div class="infinite-photo-top fade-scale">
+    <div class="infinite-photo-top fade-scale fade-in">
       <img src="20.png" alt="Фото сверху">
     </div>
 
     <!-- Заголовок -->
-    <div class="invite-title fade-left">Құрметті ағайын-туыс, <div>дос-жарандар!</div>
+    <div class="invite-title fade-left fade-in">Құрметті ағайын-туыс, <div>дос-жарандар!</div>
     </div>
 
     <!-- Основной текст -->
@@ -1039,10 +1565,10 @@ html, body {
     </div>
 
     <!-- Нижний текст -->
-    <div class="invite-bottom fade-left">Сіздің келуіңіз біз үшін үлкен мәртебе!</div>
+    <div class="invite-bottom fade-left fade-in">Сіздің келуіңіз біз үшін үлкен мәртебе!</div>
 
     <!-- Нижнее фото -->
-    <div class="infinite-photo-bottom fade-scale">
+    <div class="infinite-photo-bottom fade-scale fade-in">
       <img src="20.png" alt="Фото снизу">
     </div>
   </div>
@@ -1068,14 +1594,9 @@ html, body {
         <div class="calendar-highlight"> </div>
       </div>
       <!-- Конфетти сверху -->
-      <div class="falling falling-down" style="left: 10%;"><img src="32.png" alt="Конфетти сверху"></div>
-      <div class="falling falling-down" style="left: 40%;"><img src="32.png" alt="Конфетти сверху"></div>
-      <div class="falling falling-down" style="left: 70%;"><img src="32.png" alt="Конфетти сверху"></div>
-
+      <div class="falling falling-down" style="left: 50%;"><img src="32.png" alt="Конфетти сверху"></div>
       <!-- Конфетти снизу -->
-      <div class="falling falling-up" style="left: 20%;"><img src="32.png" alt="Конфетти снизу"></div>
-      <div class="falling falling-up" style="left: 60%;"><img src="32.png" alt="Конфетти снизу"></div>
-      <div class="falling falling-up" style="left: 85%;"><img src="32.png" alt="Конфетти снизу"></div>
+      <div class="falling falling-up" style="left: 50%;"><img src="32.png" alt="Конфетти снизу"></div>
     </div>
   </section>
 
@@ -1150,7 +1671,7 @@ html, body {
   </section>
 
   <div class="footer-separator">
-    қуанышымызға <br>ортақ болыңыздар!!!
+   Біздің мерекеміздің қадірлі <br>қонағы болыңыздар!
   </div>
 
   <script>
@@ -1264,8 +1785,14 @@ html, body {
     });
   </script>
   <footer class="site-footer">
-    ©Караганда 2025
-  </footer>
+  <p>
+    ©2025 Егер сіз аты-жөнді <br>қате жазып қойсаңыз, батырмаларды <br>өзгерткіңіз келсе 
+    немесе қателер <br>тапсаңыз — хабарласыңыз:
+  </p>
+  <a href="https://wa.me/+77086614390" target="_blank" class="footer-whatsapp">
+    <img src="WhatsApp.png" alt="WhatsApp"> WhatsApp арқылы жазу
+  </a>
+</footer>
 </body>
 
 </html>
